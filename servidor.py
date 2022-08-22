@@ -1,13 +1,9 @@
-from usuario import Usuario
-
-
 
 class Servidor():
     def __int__(self):
         self.__usuarios = []
         self.__ttask = 0
         self.__umax = 0
-        self.__ativo = False
 
     def inserir_ttask(self, valor):
         if valor <= 0 or valor > 10:
@@ -22,7 +18,7 @@ class Servidor():
             self.__umax = valor
 
     def inserir_usuario(self, usuario):
-        if len(self.__usuarios) > self.__umax:
+        if len(self.__usuarios) >= self.__umax:
             return False
         else:
             self.__usuarios.append(usuario)
@@ -33,19 +29,22 @@ class Servidor():
         else:
             print("Usuario não existe no servidor")
 
-
-
-    def desativar_servidor(self):
+    def encerrarServidor(self):
         if self.__ativo == True:
-            self.__ativo = False
-            print("Servidor desativado")
+            if len(self.__usuarios) == 0:
+                self.__ativo = False
+                print("Servidor desligado")
         else:
-            print("Servidor já está desativado")
+            print("Servidor já está desligado")
 
 
     @property
+    def nome_servidor(self):
+        return self.__nome_servidor
+
+    @property
     def usuarios(self):
-        return self.__usuarios
+        return len(self.__usuarios)
 
     @property
     def ttask(self):
