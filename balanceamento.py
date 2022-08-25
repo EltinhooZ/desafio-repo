@@ -1,9 +1,8 @@
-from servidor import Servidor
-import numpy as np
-
-ticks = 0
-servidor = Servidor()
-listaServidores = []
+# from servidor import Servidor
+#
+# ticks = 0
+# servidor = Servidor()
+# listaServidores = []
 
 # Forma 1 como tinha pensado, porém decidi realizar a leitura do arquivo input.txt
 # A ideia era que ficasse dinamica a solicitação dos dados.

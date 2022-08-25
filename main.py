@@ -1,8 +1,4 @@
-from servidor import Servidor
-
 # main para tentar uma nova lógica
-
-
 with open('input.txt', 'r') as arquivo_input:
     input = [int(item) for item in arquivo_input.readlines()]
 
@@ -12,8 +8,6 @@ umax = 0
 listaServidores = []
 controle = True
 
-
-# todo: transformar em funções
 if input[0] <= 0 or input[0] > 10:
     print("Não foi")
 else:
